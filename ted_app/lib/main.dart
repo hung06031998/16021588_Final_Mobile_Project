@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tedapp/TalksTab.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,7 +11,7 @@ class MyApp extends StatefulWidget {
 class _HomeState extends State<MyApp>{
   int _currentIndex = 0;
   final tabs = [
-    Text("1"),
+    TalksTab(),
     Text("2"),
     Text("3"),
     Text("4"),
@@ -32,25 +33,6 @@ class _HomeState extends State<MyApp>{
         primarySwatch: Colors.red,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          title: RichText(
-            text: TextSpan(
-                children: [
-                  TextSpan(text: "TED ",
-                      style: TextStyle(
-                          color: Colors.red, fontWeight: FontWeight.w700)),
-                  TextSpan(text: "Talks", style: TextStyle(color: Colors.red))
-                ]
-            ),
-          ),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(Icons.more_vert),
-              onPressed: null,
-            )
-          ],
-        ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           currentIndex: _currentIndex,
