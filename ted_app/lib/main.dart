@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tedapp/DiscoverTab.dart';
+import 'package:tedapp/MyTEDTab.dart';
+import 'package:tedapp/PodcastTab.dart';
 import 'package:tedapp/TalksTab.dart';
 
 void main() => runApp(MyApp());
@@ -9,13 +12,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _HomeState extends State<MyApp>{
-  int _currentIndex = 0;
-  final tabs = [
-    TalksTab(),
-    Text("2"),
-    Text("3"),
-    Text("4"),
-  ];
+  int _currentIndex = 3;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,6 +32,7 @@ class _HomeState extends State<MyApp>{
       home: Scaffold(
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
+          elevation: 10.0,
           currentIndex: _currentIndex,
           onTap: (index) {
             setState(() {
@@ -61,7 +59,15 @@ class _HomeState extends State<MyApp>{
             ),
           ],
         ),
-        body: tabs[_currentIndex],
+        body: IndexedStack(
+          children: <Widget>[
+            TalksTab(),
+            DiscoverTab(),
+            PodcastTab(),
+            MyTEDTab(),
+          ],
+          index: _currentIndex,
+        )
       ),
     );
   }

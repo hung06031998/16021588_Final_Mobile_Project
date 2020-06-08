@@ -1,8 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tedapp/MostViewedTab.dart';
-import 'package:tedapp/NewestTab.dart';
-import 'package:tedapp/TrendingTab.dart';
 
 class TalksTab extends StatefulWidget {
   @override
@@ -12,98 +9,9 @@ class TalksTab extends StatefulWidget {
   }
 }
 
-class _TalksTabState extends State<TalksTab>
-    with SingleTickerProviderStateMixin {
-  TabController _tabController;
-  int _indexOfTab;
-  Widget _contextOfTab;
+class _TalksTabState extends State<TalksTab> {
   final _tabs = ["Newest", "Trending", "Most viewed"];
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _tabController = TabController(vsync: this, length: 3);
-    _indexOfTab = 0;
-    _contextOfTab = SliverGrid(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 500.0,
-        mainAxisSpacing: 10.0,
-        crossAxisSpacing: 10.0,
-        childAspectRatio: 4.0,
-      ),
-      delegate: SliverChildBuilderDelegate(
-        (BuildContext context, int index) {
-          return Card(
-              child: Stack(
-            children: <Widget>[
-              Image.asset(
-                "images/test3.jpg",
-                fit: BoxFit.scaleDown,
-              ),
-              ListTile(
-                  title: RichText(
-                    text: TextSpan(children: [
-                      TextSpan(text: "Nguyen Viet Hung\n"),
-                      TextSpan(
-                          text: "Phat trien ung dung flutter 1 cach hoan hao",
-                          style: TextStyle(fontWeight: FontWeight.w700))
-                    ]),
-                  ),
-                  trailing: IconButton(
-                    icon: Icon(Icons.more_vert),
-                    onPressed: null,
-                  )),
-            ],
-          ));
-        },
-        childCount: 20,
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    _tabController.dispose();
-    _indexOfTab = 0;
-    _contextOfTab = SliverGrid(
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 500.0,
-        mainAxisSpacing: 10.0,
-        crossAxisSpacing: 10.0,
-        childAspectRatio: 4.0,
-      ),
-      delegate: SliverChildBuilderDelegate(
-        (BuildContext context, int index) {
-          return Card(
-              child: Stack(
-            children: <Widget>[
-              Image.asset(
-                "images/test3.jpg",
-                fit: BoxFit.scaleDown,
-              ),
-              ListTile(
-                  title: RichText(
-                    text: TextSpan(children: [
-                      TextSpan(text: "Nguyen Viet Hung\n"),
-                      TextSpan(
-                          text: "Phat trien ung dung flutter 1 cach hoan hao",
-                          style: TextStyle(fontWeight: FontWeight.w700))
-                    ]),
-                  ),
-                  trailing: IconButton(
-                    icon: Icon(Icons.more_vert),
-                    onPressed: null,
-                  )),
-            ],
-          ));
-        },
-        childCount: 20,
-      ),
-    );
-    super.dispose();
-  }
-
+  List listItemMenu = ["Settings", "Privacy policy", "Feedback", "Log out"];
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -114,10 +22,11 @@ class _TalksTabState extends State<TalksTab>
             return <Widget>[
               SliverAppBar(
                 pinned: true,
-                snap: false,
+                floating: true,
+                forceElevated: true,
                 backgroundColor: Colors.white,
                 title: Padding(
-                  padding: EdgeInsets.all(1.0),
+                  padding: EdgeInsets.all(0.0),
                   child: RichText(
                     text: TextSpan(children: [
                       TextSpan(
@@ -134,7 +43,22 @@ class _TalksTabState extends State<TalksTab>
                     ]),
                   ),
                 ),
-                floating: true,
+                actions: <Widget>[
+                  PopupMenuButton(
+                    icon: Icon(Icons.more_vert, color: Colors.grey,),
+                    elevation: 8.0,
+                    onCanceled: () => print("cancle"),
+                    onSelected: (item) => print(item),
+                    itemBuilder: (context){
+                      return listItemMenu.map((item){
+                        return PopupMenuItem(
+                          value: item,
+                          child: Text(item),
+                        );
+                      }).toList();
+                    },
+                  )
+                ],
                 bottom: TabBar(
                   labelColor: Colors.red,
                   unselectedLabelColor: Colors.grey,
@@ -149,17 +73,20 @@ class _TalksTabState extends State<TalksTab>
             children: <Widget>[
               ListView.builder(itemBuilder: (context, index) {
                 return Card(
-                  child: Image.asset('images/test.jpg'),
+                  child: Text("aaaaa"),
+//                  child: Image.asset('images/test.jpg'),
                 );
               }),
               ListView.builder(itemBuilder: (context, index) {
                 return Card(
-                  child: Image.asset("images/test2.png"),
+                  child: Text("bbbbb"),
+//                  child: Image.asset("images/test2.png"),
                 );
               }),
               ListView.builder(itemBuilder: (context, index) {
                 return Card(
-                  child: Image.asset("images/test3.jpg"),
+                  child: Text("ccccc"),
+//                  child: Image.asset("images/test3.jpg"),
                 );
               })
             ],
