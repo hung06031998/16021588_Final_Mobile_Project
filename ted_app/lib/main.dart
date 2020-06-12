@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _HomeState extends State<MyApp> {
-  int _currentIndex = 3;
+  int _currentIndex = 1;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
