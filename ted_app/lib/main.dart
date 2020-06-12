@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tedapp/DiscoverTab.dart';
+import 'package:tedapp/HeaderInfo.dart';
 import 'package:tedapp/MyTEDTab.dart';
 import 'package:tedapp/PodcastTab.dart';
 import 'package:tedapp/TalksTab.dart';
@@ -11,7 +12,7 @@ class MyApp extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<MyApp>{
+class _HomeState extends State<MyApp> {
   int _currentIndex = 3;
   @override
   Widget build(BuildContext context) {
@@ -30,45 +31,47 @@ class _HomeState extends State<MyApp>{
         primarySwatch: Colors.red,
       ),
       home: Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          elevation: 10.0,
-          currentIndex: _currentIndex,
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.video_library),
-              title: Text("Talks"),
-            ),
-
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              title: Text("Discover"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.headset),
-              title: Text("Podcasts"),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle),
-              title: Text("My TED"),
-            ),
-          ],
-        ),
-        body: IndexedStack(
-          children: <Widget>[
-            TalksTab(),
-            DiscoverTab(),
-            PodcastTab(),
-            MyTEDTab(),
-          ],
-          index: _currentIndex,
-        )
-      ),
+          bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            elevation: 10.0,
+            currentIndex: _currentIndex,
+            onTap: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.video_library),
+                title: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Center(child: Text("Talks")),
+                ),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                title: Text("Discover"),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.headset),
+                title: Text("Podcasts"),
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle),
+                title: Text("My TED"),
+              ),
+            ],
+          ),
+          body: IndexedStack(
+            children: <Widget>[
+              TalksTab(),
+              DiscoverTab(),
+              PodcastTab(),
+              HeaderInfo()
+//            MyTEDTab(),
+            ],
+            index: _currentIndex,
+          )),
     );
   }
 }
