@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tedapp/ImportData.dart';
 
 class TalksTab extends StatefulWidget {
   @override
@@ -48,7 +49,7 @@ class _TalksTabState extends State<TalksTab> {
                     icon: Icon(Icons.more_vert, color: Colors.grey,),
                     elevation: 8.0,
                     onCanceled: () => print("cancle"),
-                    onSelected: (item) => print(item),
+                    onSelected: (item) => ImportData().addData(),
                     itemBuilder: (context){
                       return listItemMenu.map((item){
                         return PopupMenuItem(
