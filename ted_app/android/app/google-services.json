@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "372494936567",
+    "firebase_url": "https://my-first-project-2-72d2a.firebaseio.com",
+    "project_id": "my-first-project-2-72d2a",
+    "storage_bucket": "my-first-project-2-72d2a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372494936567:android:99b50337020fc735d866f2",
+        "android_client_info": {
+          "package_name": "com.example.englishlearningapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372494936567-opm1qs0snvv2p8frt1to60bn0mgdmvo8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0s0uhimKbRSjxki5zOe6j01bc0baGNHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372494936567-opm1qs0snvv2p8frt1to60bn0mgdmvo8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372494936567:android:8deafb988466b9d0d866f2",
+        "android_client_info": {
+          "package_name": "com.hung.tedapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372494936567-opm1qs0snvv2p8frt1to60bn0mgdmvo8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0s0uhimKbRSjxki5zOe6j01bc0baGNHg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372494936567-opm1qs0snvv2p8frt1to60bn0mgdmvo8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

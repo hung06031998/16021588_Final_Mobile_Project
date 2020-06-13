@@ -13,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _HomeState extends State<MyApp> {
-  int _currentIndex = 1;
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -67,7 +67,7 @@ class _HomeState extends State<MyApp> {
               TalksTab(),
               DiscoverTab(),
               PodcastTab(),
-              HeaderInfo()
+              HeaderInfo(),
 //            MyTEDTab(),
             ],
             index: _currentIndex,
