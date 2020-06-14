@@ -43,10 +43,7 @@ class _HomeState extends State<MyApp> {
             items: [
               BottomNavigationBarItem(
                 icon: Icon(Icons.video_library),
-                title: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(child: Text("Talks")),
-                ),
+                title: Center(child: Text("Talks")),
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.search),
@@ -67,8 +64,8 @@ class _HomeState extends State<MyApp> {
               TalksTab(),
               DiscoverTab(),
               PodcastTab(),
-              HeaderInfo(),
-//            MyTEDTab(),
+//              HeaderInfo(),
+            MyTEDTab(),
             ],
             index: _currentIndex,
           )),
