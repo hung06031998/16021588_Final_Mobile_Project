@@ -25,7 +25,7 @@ class _BodyOfTalksTabState extends State<BodyOfTalksTab> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return StreamBuilder(
-      stream: Firestore.instance.collection("talks").where("state", isEqualTo: state).snapshots(),
+      stream: Firestore.instance.collection("Talks").snapshots(),
       builder: (context, snapshot) {
         if(snapshot.hasData)
           return StaggeredGridView.countBuilder(
@@ -34,7 +34,7 @@ class _BodyOfTalksTabState extends State<BodyOfTalksTab> {
           crossAxisCount: 4,
           itemCount: snapshot.data.documents.length,
           staggeredTileBuilder: (index) {
-            return StaggeredTile.count(index == 0 ? 4 : 2, index == 0 ? 2 : 1);
+            return StaggeredTile.count(4, 2);
           },
           itemBuilder: (context, index) {
             return InkWell(
@@ -54,24 +54,24 @@ class _BodyOfTalksTabState extends State<BodyOfTalksTab> {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Expanded(
-                        flex: 4,
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(6.0, 6.0, 0.0, 6.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Container(
-                                color: Colors.black12,
-                                  child: Text(snapshot.data.documents[index]["speakers"], textAlign: TextAlign.left, style: TextStyle(color: Colors.white))),
-                              Container(
-                                color: Colors.black12,
-                                  child: Text(snapshot.data.documents[index]["name"], textAlign: TextAlign.left, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
-                            ],
-                          ),
-                        ),
-                      ),
+//                      Expanded(
+//                        flex: 4,
+//                        child: Padding(
+//                          padding: const EdgeInsets.fromLTRB(6.0, 6.0, 0.0, 6.0),
+//                          child: Column(
+//                            mainAxisAlignment: MainAxisAlignment.end,
+//                            crossAxisAlignment: CrossAxisAlignment.start,
+//                            children: <Widget>[
+//                              Container(
+//                                color: Colors.black12,
+//                                  child: Text(snapshot.data.documents[index]["speakers"], textAlign: TextAlign.left, style: TextStyle(color: Colors.white))),
+//                              Container(
+//                                color: Colors.black12,
+//                                  child: Text(snapshot.data.documents[index]["name"], textAlign: TextAlign.left, style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold))),
+//                            ],
+//                          ),
+//                        ),
+//                      ),
                       Expanded(
                         flex: 1,
                         child: Column(
