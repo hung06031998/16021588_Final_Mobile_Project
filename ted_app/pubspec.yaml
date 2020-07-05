@@ -14,11 +14,17 @@ description: Clone App Ted
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.6.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  cloud_firestore:
+  flutter_staggered_grid_view:
+  youtube_player_flutter:
+  firebase_core:
+  firebase_auth:
+  google_sign_in:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

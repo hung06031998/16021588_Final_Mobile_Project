@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'InfoTab.dart';
+import 'ListSocials.dart';
+import 'SeeAllTopic.dart';
+
 class DiscoverTab extends StatefulWidget {
   @override
   _DiscoverTabState createState() {
@@ -38,42 +42,84 @@ class _DiscoverTabState extends State<DiscoverTab> {
                           style: TextStyle(
                               fontWeight: FontWeight.bold, color: Colors.red),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => SeeAllTopic()));
+                        },
                       )
                     ],
                   ),
                 ),
 //                list 1
                 SizedBox(
-                  width: double.infinity,
-                  height: 230,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return FlatButton(
-                        padding: EdgeInsets.only(left: 0.0, right: 6.0),
-                        onPressed: () {},
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: <Widget>[
-                            Image.asset(
-                              "images/test.jpg",
-                              fit: BoxFit.fitWidth,
-                              height: 200,
-                              width: 200,
-                            ),
-                            Text(
-                              "Anh" + index.toString(),
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            )
-                          ],
+                    width: double.infinity,
+                    height: 230,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: <Widget>[
+                        FlatButton(
+                          padding: EdgeInsets.only(left: 0.0, right: 6.0),
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ListSocials()));
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Image.network(
+                                "https://assets-global.website-files.com/5b682d255fc94ca52c48fa0d/5c21aef90d5f11b1daac4e8d_Social-Media-Marketing.png",
+                                fit: BoxFit.fill,
+                                height: 200,
+                                width: 200,
+                              ),
+                              Text(
+                                "Socials",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
                         ),
-                      );
-                    },
-                  ),
-                ),
+                        FlatButton(
+                          padding: EdgeInsets.only(left: 0.0, right: 6.0),
+                          onPressed: () {},
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Image.network(
+                                "https://process.fs.teachablecdn.com/ADNupMnWyR7kCWRvm76Laz/resize=width:705/https://www.filepicker.io/api/file/SplIhKh9R1qWIDHmx74L",
+                                fit: BoxFit.fill,
+                                height: 200,
+                                width: 200,
+                              ),
+                              Text(
+                                "Speaking",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        ),
+                        FlatButton(
+                          padding: EdgeInsets.only(left: 0.0, right: 6.0),
+                          onPressed: () {},
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Image.network(
+                                "https://lh3.googleusercontent.com/proxy/sqodImD37_Pz9lerx5FXYq4zF1eC7ZlF2_4uxXNcopzvjxz_1E0kC8zKCPiQ4CYTl7tY0bA0OWUJTeZq6xvDu_V4Jlk76wfMOWhrgypn48xCx95qWSWQu9ca_AylNkolC5_9Z1SVCc57dVjQXcKg51WoAgr8Mb8ZKS-4mxs72CWM",
+                                fit: BoxFit.fill,
+                                height: 200,
+                                width: 200,
+                              ),
+                              Text(
+                                "Thinking",
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    )),
 //                title 2
                 Container(
                   child: Row(
@@ -98,12 +144,46 @@ class _DiscoverTabState extends State<DiscoverTab> {
                 SizedBox(
                   width: double.infinity,
                   height: 300.0,
-                  child: ListView.builder(
+                  child: ListView(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return MyCustomCard(240.0, 240.0, null, false, true, true, true, "Mo ta", "", "50:12");
-                    },
+                    children: <Widget>[
+                      MyCustomCard(
+                          240.0,
+                          240.0,
+                          null,
+                          false,
+                          true,
+                          true,
+                          true,
+                          "https://www.sciencenews.org/wp-content/uploads/2019/12/120719_scientistsrights_feat_opt2-1027x579.png",
+                          "Science",
+                          "",
+                          "50:12"),
+                      MyCustomCard(
+                          240.0,
+                          240.0,
+                          null,
+                          false,
+                          true,
+                          true,
+                          true,
+                          "https://d57439wlqx3vo.cloudfront.net/iblock/6cc/6ccab5f1d555f5739c9a3c7ab53c21a7/0895b691239e211a619a481eadfed209.png",
+                          "Languages",
+                          "",
+                          "100:3"),
+                      MyCustomCard(
+                          240.0,
+                          240.0,
+                          null,
+                          false,
+                          true,
+                          true,
+                          true,
+                          "https://i1.sndcdn.com/avatars-000711259471-hrqdtk-t500x500.jpg",
+                          "Facts",
+                          "",
+                          "10:34"),
+                    ],
                   ),
                 ),
 //                title 3
@@ -130,12 +210,56 @@ class _DiscoverTabState extends State<DiscoverTab> {
                 SizedBox(
                   width: double.infinity,
                   height: 300,
-                  child: ListView.builder(
+                  child: ListView(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 10,
-                    itemBuilder: (context, index) {
-                      return MyCustomCard(240.0, 240.0, CircleBorder(), true, false, false, false, "", "Speaker", "");
-                    },
+                    children: <Widget>[
+                      MyCustomCard(
+                          240.0,
+                          240.0,
+                          CircleBorder(),
+                          true,
+                          false,
+                          false,
+                          false,
+                          "https://media-exp1.licdn.com/dms/image/C4E03AQEe8Vx5TtMqYg/profile-displayphoto-shrink_200_200/0?e=1596672000&v=beta&t=FbW6UxHBMpWQ1GzaMb8sxS2Q5vlCVj9qRIAH2sz-JCY",
+                          "",
+                          "Cella Wright",
+                          ""),MyCustomCard(
+                          240.0,
+                          240.0,
+                          CircleBorder(),
+                          true,
+                          false,
+                          false,
+                          false,
+                          "https://cdn.theconversation.com/avatars/951360/width238/image-20200205-149742-xy8nq1.jpg",
+                          "",
+                          "Cameron Morin",
+                          ""),MyCustomCard(
+                          240.0,
+                          240.0,
+                          CircleBorder(),
+                          true,
+                          false,
+                          false,
+                          false,
+                          "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSJcU8NFYp7uXSy4yzZQZ7wP-cusyxXs2fa7A&usqp=CAU",
+                          "",
+                          "Brian A. Pavlac",
+                          ""),MyCustomCard(
+                          240.0,
+                          240.0,
+                          CircleBorder(),
+                          true,
+                          false,
+                          false,
+                          false,
+                          "https://sydney.edu.au/images/content/cws/news/newsevents/articles/2007/may/arimain.jpg",
+                          "",
+                          "Sascha Morrell",
+                          "")
+                    ],
+
                   ),
                 ),
 //                title 4
@@ -152,29 +276,37 @@ class _DiscoverTabState extends State<DiscoverTab> {
                 ),
 //                list 4
                 SizedBox(
-                  width: double.infinity,
-                  height: 150,
-                  child: Center(
-                    child: Container(
-                      width: 280,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Text("Ted talks are translated into over 110 subtitles language", style: TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 8.0),
-                            child: RaisedButton(
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                              color: Colors.red,
-                              child: Text("ALL LANGUAGES", style: TextStyle(color: Colors.white),),
-                              onPressed: (){},
+                    width: double.infinity,
+                    height: 150,
+                    child: Center(
+                      child: Container(
+                        width: 280,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "Ted talks are translated into over 110 subtitles language",
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                              textAlign: TextAlign.center,
                             ),
-                          )
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8.0),
+                              child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(20.0))),
+                                color: Colors.red,
+                                child: Text(
+                                  "ALL LANGUAGES",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                onPressed: () {},
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  )
-                ),
+                    )),
               ],
             ),
           ),
@@ -252,18 +384,20 @@ class MyCustomCard extends StatefulWidget {
   double widthImage, heightImage;
   ShapeBorder shapeBorder;
   bool isTextOuterCard, isTextInnerCard, isTextOnImage, isActionButton;
-  String textInner, textOuter, textOnImage;
+  String textInner, textOuter, textOnImage, urlImage;
 
-  MyCustomCard(double widthImage,
-                double heightImage,
-                ShapeBorder shapeBorder,
-                bool isTextOuterCard,
-                bool isTextInnerCard,
-                bool isTextOnImage,
-                bool isActionButton,
-                String textInner,
-                String textOuter,
-                String textOnImage) {
+  MyCustomCard(
+      double widthImage,
+      double heightImage,
+      ShapeBorder shapeBorder,
+      bool isTextOuterCard,
+      bool isTextInnerCard,
+      bool isTextOnImage,
+      bool isActionButton,
+      String urlImage,
+      String textInner,
+      String textOuter,
+      String textOnImage) {
     this.widthImage = widthImage;
     this.heightImage = heightImage;
     this.shapeBorder = shapeBorder;
@@ -274,20 +408,40 @@ class MyCustomCard extends StatefulWidget {
     this.textInner = textInner;
     this.textOuter = textOuter;
     this.textOnImage = textOnImage;
-
+    this.urlImage = urlImage;
   }
 
   @override
-  _MyCustomCardState createState() => _MyCustomCardState(widthImage, heightImage, shapeBorder, isTextOuterCard, isTextInnerCard, isTextOnImage, isActionButton, textInner, textOuter, textOnImage);
+  _MyCustomCardState createState() => _MyCustomCardState(
+      widthImage,
+      heightImage,
+      shapeBorder,
+      isTextOuterCard,
+      isTextInnerCard,
+      isTextOnImage,
+      isActionButton,
+      urlImage,
+      textInner,
+      textOuter,
+      textOnImage);
 }
 
 class _MyCustomCardState extends State<MyCustomCard> {
   double widthImage, heightImage;
   ShapeBorder shapeBorder;
   bool isTextOuterCard, isTextInnerCard, isTextOnImage, isActionButton;
-  String textInner, textOuter, textOnImage;
+  String textInner, textOuter, textOnImage, urlImage;
 
-  _MyCustomCardState(double width, double height, ShapeBorder shapeBorder, bool isTextOuterCard, bool isTextInnerCard, isTextOnImage, bool isActionButton, String textInner,
+  _MyCustomCardState(
+      double width,
+      double height,
+      ShapeBorder shapeBorder,
+      bool isTextOuterCard,
+      bool isTextInnerCard,
+      bool isTextOnImage,
+      bool isActionButton,
+      String urlImage,
+      String textInner,
       String textOuter,
       String textOnImage) {
     this.widthImage = width;
@@ -300,6 +454,7 @@ class _MyCustomCardState extends State<MyCustomCard> {
     this.textInner = textInner;
     this.textOuter = textOuter;
     this.textOnImage = textOnImage;
+    this.urlImage = urlImage;
   }
 
   @override
@@ -308,7 +463,6 @@ class _MyCustomCardState extends State<MyCustomCard> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Container(
-
           child: Card(
             shape: shapeBorder,
             clipBehavior: Clip.antiAlias,
@@ -332,13 +486,12 @@ class _MyCustomCardState extends State<MyCustomCard> {
                       children: <Widget>[
                         Positioned.fill(
                           child: Ink.image(
-                            image: NetworkImage(
-                                "https://storage.oxii.vn/Cache/Sites/OXII/Storage/Images/2019/2/26/1920/hot-girl-waralee-ngot-hon-duong-trong-bo-anh-sun-set-anh-1_640_435_721.jpg"),
+                            image: NetworkImage(urlImage),
                             fit: BoxFit.cover,
                             child: Container(),
                           ),
                         ),
-                        if(isTextOnImage)
+                        if (isTextOnImage)
                           Positioned(
                             bottom: 10.0,
                             right: 10.0,
@@ -353,15 +506,17 @@ class _MyCustomCardState extends State<MyCustomCard> {
                     ),
                   ),
 //                    title and action
-                  if(isTextInnerCard || isActionButton)
+                  if (isTextInnerCard || isActionButton)
                     Container(
                       width: widthImage,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Text(textInner, style: Theme.of(context).textTheme.title,
+                          Text(
+                            textInner,
+                            style: Theme.of(context).textTheme.title,
                           ),
-                          if(isActionButton)
+                          if (isActionButton)
                             IconButton(
                               onPressed: () {},
                               icon: Icon(Icons.more_vert),
@@ -374,8 +529,11 @@ class _MyCustomCardState extends State<MyCustomCard> {
             ),
           ),
         ),
-        if(isTextOuterCard)
-          Text(textOuter, style: Theme.of(context).textTheme.title,),
+        if (isTextOuterCard)
+          Text(
+            textOuter,
+            style: Theme.of(context).textTheme.title,
+          ),
       ],
     );
   }

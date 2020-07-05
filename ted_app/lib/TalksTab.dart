@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tedapp/BodyOfTalksTab.dart';
+import 'package:tedapp/ImportData.dart';
 
 class TalksTab extends StatefulWidget {
   @override
@@ -12,6 +14,7 @@ class TalksTab extends StatefulWidget {
 class _TalksTabState extends State<TalksTab> {
   final _tabs = ["Newest", "Trending", "Most viewed"];
   List listItemMenu = ["Settings", "Privacy policy", "Feedback", "Log out"];
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -48,7 +51,7 @@ class _TalksTabState extends State<TalksTab> {
                     icon: Icon(Icons.more_vert, color: Colors.grey,),
                     elevation: 8.0,
                     onCanceled: () => print("cancle"),
-                    onSelected: (item) => print(item),
+                    onSelected: (item) => ImportData().addData(),
                     itemBuilder: (context){
                       return listItemMenu.map((item){
                         return PopupMenuItem(
@@ -71,24 +74,9 @@ class _TalksTabState extends State<TalksTab> {
           body: TabBarView(
             physics: NeverScrollableScrollPhysics(),
             children: <Widget>[
-              ListView.builder(itemBuilder: (context, index) {
-                return Card(
-                  child: Text("aaaaa"),
-//                  child: Image.asset('images/test.jpg'),
-                );
-              }),
-              ListView.builder(itemBuilder: (context, index) {
-                return Card(
-                  child: Text("bbbbb"),
-//                  child: Image.asset("images/test2.png"),
-                );
-              }),
-              ListView.builder(itemBuilder: (context, index) {
-                return Card(
-                  child: Text("ccccc"),
-//                  child: Image.asset("images/test3.jpg"),
-                );
-              })
+              BodyOfTalksTab("Newest"),
+              BodyOfTalksTab("Trending"),
+              BodyOfTalksTab("Most_viewed"),
             ],
           ),
         ));

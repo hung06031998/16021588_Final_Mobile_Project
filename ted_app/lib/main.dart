@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tedapp/DiscoverTab.dart';
-import 'package:tedapp/HeaderInfo.dart';
 import 'package:tedapp/MyTEDTab.dart';
 import 'package:tedapp/PodcastTab.dart';
 import 'package:tedapp/TalksTab.dart';
@@ -13,7 +12,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _HomeState extends State<MyApp> {
-  int _currentIndex = 1;
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,10 +42,7 @@ class _HomeState extends State<MyApp> {
             items: [
               BottomNavigationBarItem(
                 icon: Icon(Icons.video_library),
-                title: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Center(child: Text("Talks")),
-                ),
+                title: Center(child: Text("Talks")),
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.search),
@@ -67,8 +63,8 @@ class _HomeState extends State<MyApp> {
               TalksTab(),
               DiscoverTab(),
               PodcastTab(),
-              HeaderInfo()
-//            MyTEDTab(),
+//              HeaderInfo(),
+            MyTEDTab(),
             ],
             index: _currentIndex,
           )),
