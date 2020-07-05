@@ -5,13 +5,14 @@ class ImportData{
     var firestoreInstance = Firestore.instance;
     firestoreInstance.collection("talks").add(
         {
-          "name" : "The next outbreak? We’re not ready",
-          "idVideo" : "6Af6b_wyiwI",
-          "speakers" : "Bill Gates",
-          "duration" : "8:36",
-          "subtitle" : "In 2014, the world avoided a horrific global outbreak of Ebola, thanks to thousands of selfless health workers -- plus, frankly, thanks to some very good luck. In hindsight, we know what we should have done better. So, now's the time, Bill Gates suggests, to put all our good ideas into practice, from scenario planning to vaccine research to health worker training. As he says, \"There's no need to panic ... but we need to get going.\"",
-          "urlImage" : "https://img.youtube.com/vi/6Af6b_wyiwI/default.jpg",
-          "urlVideo" : "https://www.youtube.com/watch?v=6Af6b_wyiwI"
+          "name" : "Why elephants never forget",
+          "idVideo" : "lSXNqsOoURg",
+          "speakers" : "Alex Gendler",
+          "duration" : "5:22",
+          "state" : "Most_viewed",
+          "subtitle" : "It’s a common saying that elephants never forget. But the more we learn about elephants, the more it appears that their impressive memory is only one aspect of an incredible intelligence that makes them some of the most social, creative, and benevolent creatures on Earth. Alex Gendler takes us into the incredible, unforgettable mind of an elephant.",
+          "urlImage" : "https://img.youtube.com/vi/lSXNqsOoURg/maxresdefault.jpg",
+          "urlVideo" : "https://www.youtube.com/watch?v=lSXNqsOoURg"
         }).then((value){
       print(value.documentID);
     });

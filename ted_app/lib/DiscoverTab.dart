@@ -102,7 +102,7 @@ class _DiscoverTabState extends State<DiscoverTab> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 10,
                     itemBuilder: (context, index) {
-                      return MyCustomCard(240.0, 240.0, null, false, true, true, true, "Mo ta", "", "50:12");
+                      return MyCustomCard(240.0, 240.0, null, false, true, true, true, "https://storage.oxii.vn/Cache/Sites/OXII/Storage/Images/2019/2/26/1920/hot-girl-waralee-ngot-hon-duong-trong-bo-anh-sun-set-anh-1_640_435_721.jpg", "Mo ta", "", "50:12");
                     },
                   ),
                 ),
@@ -134,7 +134,7 @@ class _DiscoverTabState extends State<DiscoverTab> {
                     scrollDirection: Axis.horizontal,
                     itemCount: 10,
                     itemBuilder: (context, index) {
-                      return MyCustomCard(240.0, 240.0, CircleBorder(), true, false, false, false, "", "Speaker", "");
+                      return MyCustomCard(240.0, 240.0, CircleBorder(), true, false, false, false, "https://storage.oxii.vn/Cache/Sites/OXII/Storage/Images/2019/2/26/1920/hot-girl-waralee-ngot-hon-duong-trong-bo-anh-sun-set-anh-1_640_435_721.jpg", "", "Speaker", "");
                     },
                   ),
                 ),
@@ -252,7 +252,7 @@ class MyCustomCard extends StatefulWidget {
   double widthImage, heightImage;
   ShapeBorder shapeBorder;
   bool isTextOuterCard, isTextInnerCard, isTextOnImage, isActionButton;
-  String textInner, textOuter, textOnImage;
+  String textInner, textOuter, textOnImage, urlImage;
 
   MyCustomCard(double widthImage,
                 double heightImage,
@@ -261,6 +261,7 @@ class MyCustomCard extends StatefulWidget {
                 bool isTextInnerCard,
                 bool isTextOnImage,
                 bool isActionButton,
+                String urlImage,
                 String textInner,
                 String textOuter,
                 String textOnImage) {
@@ -274,20 +275,21 @@ class MyCustomCard extends StatefulWidget {
     this.textInner = textInner;
     this.textOuter = textOuter;
     this.textOnImage = textOnImage;
+    this.urlImage = urlImage;
 
   }
 
   @override
-  _MyCustomCardState createState() => _MyCustomCardState(widthImage, heightImage, shapeBorder, isTextOuterCard, isTextInnerCard, isTextOnImage, isActionButton, textInner, textOuter, textOnImage);
+  _MyCustomCardState createState() => _MyCustomCardState(widthImage, heightImage, shapeBorder, isTextOuterCard, isTextInnerCard, isTextOnImage, isActionButton, urlImage, textInner, textOuter, textOnImage);
 }
 
 class _MyCustomCardState extends State<MyCustomCard> {
   double widthImage, heightImage;
   ShapeBorder shapeBorder;
   bool isTextOuterCard, isTextInnerCard, isTextOnImage, isActionButton;
-  String textInner, textOuter, textOnImage;
+  String textInner, textOuter, textOnImage, urlImage;
 
-  _MyCustomCardState(double width, double height, ShapeBorder shapeBorder, bool isTextOuterCard, bool isTextInnerCard, isTextOnImage, bool isActionButton, String textInner,
+  _MyCustomCardState(double width, double height, ShapeBorder shapeBorder, bool isTextOuterCard, bool isTextInnerCard, bool isTextOnImage, bool isActionButton, String urlImage, String textInner,
       String textOuter,
       String textOnImage) {
     this.widthImage = width;
@@ -300,6 +302,7 @@ class _MyCustomCardState extends State<MyCustomCard> {
     this.textInner = textInner;
     this.textOuter = textOuter;
     this.textOnImage = textOnImage;
+    this.urlImage = urlImage;
   }
 
   @override
@@ -333,7 +336,7 @@ class _MyCustomCardState extends State<MyCustomCard> {
                         Positioned.fill(
                           child: Ink.image(
                             image: NetworkImage(
-                                "https://storage.oxii.vn/Cache/Sites/OXII/Storage/Images/2019/2/26/1920/hot-girl-waralee-ngot-hon-duong-trong-bo-anh-sun-set-anh-1_640_435_721.jpg"),
+                                urlImage),
                             fit: BoxFit.cover,
                             child: Container(),
                           ),
