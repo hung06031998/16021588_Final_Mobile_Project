@@ -197,7 +197,7 @@ class _InfoTabState extends State<InfoTab> with SingleTickerProviderStateMixin {
                             padding: const EdgeInsets.only(left: 5.0),
                             child: ListTile(
                               subtitle: Text(
-                                "\nDâm đãng, quyến rũ",
+                                "\nTeacher, Scientist",
                                 style: Theme.of(context).textTheme.body1,
                               ),
                               leading:
@@ -208,84 +208,18 @@ class _InfoTabState extends State<InfoTab> with SingleTickerProviderStateMixin {
                                   decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                       image: DecorationImage(
-                                          image: AssetImage("images/test.jpg"),
+                                          image: NetworkImage("https://cdn.theconversation.com/avatars/951360/width238/image-20200205-149742-xy8nq1.jpg"),
                                           fit: BoxFit.fill)),
                                 );
                               }),
                               title: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Text("Vợ 1",
+                                  Text("Cella Wright",
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold)),
                                   Text(
-                                    "Ha Noi, VietNam",
-                                    style: Theme.of(context).textTheme.caption,
-                                  ),
-                                ],
-                              ),
-                            )),
-                        Text("\n"),
-                        Padding(
-                            padding: const EdgeInsets.only(left: 5.0),
-                            child: ListTile(
-                              subtitle: Text(
-                                "\nTrẻ trung, nuột nà",
-                                style: Theme.of(context).textTheme.body1,
-                              ),
-                              leading:
-                                  LayoutBuilder(builder: (context, contran) {
-                                return Container(
-                                  width: contran.biggest.height,
-                                  height: contran.biggest.height,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                          image: AssetImage("images/test2.png"),
-                                          fit: BoxFit.fill)),
-                                );
-                              }),
-                              title: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text("Vợ 2",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold)),
-                                  Text(
-                                    "Ha Noi, VietNam",
-                                    style: Theme.of(context).textTheme.caption,
-                                  ),
-                                ],
-                              ),
-                            )),
-                        Text("\n"),
-                        Padding(
-                            padding: const EdgeInsets.only(left: 5.0),
-                            child: ListTile(
-                              subtitle: Text(
-                                "\nNgọt nước",
-                                style: Theme.of(context).textTheme.body1,
-                              ),
-                              leading:
-                                  LayoutBuilder(builder: (context, contran) {
-                                return Container(
-                                  width: contran.biggest.height,
-                                  height: contran.biggest.height,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      image: DecorationImage(
-                                          image: AssetImage("images/test3.jpg"),
-                                          fit: BoxFit.fill)),
-                                );
-                              }),
-                              title: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Text("Vợ 3",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold)),
-                                  Text(
-                                    "Ha Noi, Vietnam",
+                                    "LA, USA",
                                     style: Theme.of(context).textTheme.caption,
                                   ),
                                 ],
@@ -307,12 +241,12 @@ class _InfoTabState extends State<InfoTab> with SingleTickerProviderStateMixin {
                     padding: const EdgeInsets.all(8.0),
                     child: ListTile(
                       leading: Image.network(
-                        "https://scontent.fhan2-6.fna.fbcdn.net/v/t1.0-9/102417105_1357568627965087_3973567114239247271_n.jpg?_nc_cat=108&_nc_sid=ca434c&_nc_ohc=GNGjGAQje1AAX-0fff8&_nc_ht=scontent.fhan2-6.fna&oh=e09c1a693c2c67b209ae33a82aaa73b3&oe=5F05C134",
+                        "https://img.youtube.com/vi/RQW3zC5QaY4/maxresdefault.jpg",
                         fit: BoxFit.fill,
                       ),
-                      title: Text("Tên video"),
+                      title: Text("What do all languages have in common?"),
                       subtitle: Text(
-                        "Tên speaker",
+                        "Cameron Morin",
                       ),
                       trailing: IconButton(
                         icon: Icon(Icons.more_vert),
