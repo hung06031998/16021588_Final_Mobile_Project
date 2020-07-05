@@ -42,10 +42,6 @@ class _VideoPlayerTabState extends State<VideoPlayerTab>{
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
-      appBar: AppBar(
-        title: Text(data['name']),
-        backgroundColor: Colors.red,
-      ),
       body: ListView(
         children: <Widget>[
           YoutubePlayer(controller: _controllerYoutube,),
