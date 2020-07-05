@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tedapp/DiscoverTab.dart';
-import 'package:tedapp/HeaderInfo.dart';
 import 'package:tedapp/MyTEDTab.dart';
 import 'package:tedapp/PodcastTab.dart';
 import 'package:tedapp/TalksTab.dart';

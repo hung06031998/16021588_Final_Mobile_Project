@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tedapp/VideoPlayerTab.dart';
 
 class InfoTab extends StatefulWidget {
   var data;
@@ -175,7 +176,9 @@ class _InfoTabState extends State<InfoTab> with SingleTickerProviderStateMixin {
                                   color: Colors.white,
                                   size: 60.0,
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => VideoPlayerTab(data)));
+                                  },
                               ),
                             )
                           ],
